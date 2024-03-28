@@ -20,7 +20,7 @@ function HTML_BODY
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title> $PROJECT_NAME </title>
+        <title> '$PROJECT_NAME' </title>
         <!-- CSS -->
         <link href="./css/style.css" rel="stylesheet">
     </head>
