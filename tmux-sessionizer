@@ -1,9 +1,14 @@
 #!/usr/bin/env bash
 
+
+findIgnorePaths=(-not -path '*/.dotfiles/nvim' -not -path '*/.dotfiles/alacritty' -not -path '*/.dotfiles/scripts' -not -path '*/Documents/school' -not -path '*/Documents/programming' -not -path '*Documents/keyboards')
+findIgnorePathsLinux=(-not -path '*/.dotfiles/polybar' -not -path '*/.dotfiles/rofi' -not -path '*/.dotfiles/i3')
+findIgnorePathsMac=(-not -path '*/.dotfiles/yabai' -not -path '*/.dotfiles/skhd' -not -path '*/.dotfiles/sketchybar')
+
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find -L ~/Documents/programming/*/ ~/Documents/ -mindepth 1 -maxdepth 1 -type d | fzf)
+    selected=$(find -L ~/Documents/programming/*/ ~/Documents/ ~/Documents/keyboards/ ~/.dotfiles/ ~/.dotfiles/scripts/.local/  ~/.dotfiles/*/.config/  ~/calendar/calcurse/.local/share/ -mindepth 1 -maxdepth 1 -type d "${findIgnorePaths[@]}" "${findIgnorePathsLinux[@]}" "${findIgnorePathsMac[@]}"| fzf)
 fi
 
 if [[ -z $selected ]]; then

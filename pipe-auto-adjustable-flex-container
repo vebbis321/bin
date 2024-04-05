@@ -1,0 +1,23 @@
+#!/bin/sh
+
+function CSS_BODY
+{
+    echo "
+/* flex-container with auto adjustable flex-item */ 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.flex-item {
+  width: 0px;
+  flex: 1 0 auto;
+}"
+}
+
+# CSS
+CSS_BODY >> "${PWD}/css/style.css"
+
+
+
