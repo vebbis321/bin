@@ -8,7 +8,7 @@ findIgnorePathsMac=(-not -path '*/.dotfiles/yabai' -not -path '*/.dotfiles/skhd'
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find -L ~/Documents/programming/*/ ~/Documents/ ~/Documents/keyboards/ ~/.dotfiles/ ~/.dotfiles/scripts/.local/  ~/.dotfiles/*/.config/  ~/calendar/calcurse/.local/share/ -mindepth 1 -maxdepth 1 -type d "${findIgnorePaths[@]}" "${findIgnorePathsLinux[@]}" "${findIgnorePathsMac[@]}"| fzf)
+    selected=$(find -L ~/Documents/programming/*/ ~/Documents/ ~/Documents/notes/programming_notes/*/ ~/Documents/notes/physics_notes/  ~/Documents/notes/math_notes/ ~/Documents/keyboards/ ~/.dotfiles/ ~/.dotfiles/scripts/.local/  ~/.dotfiles/*/.config/  ~/calendar/calcurse/.local/share/ -mindepth 1 -maxdepth 1 -type d "${findIgnorePaths[@]}" "${findIgnorePathsLinux[@]}" "${findIgnorePathsMac[@]}"| fzf)
 fi
 
 if [[ -z $selected ]]; then
